@@ -1,0 +1,130 @@
+/* :root {
+    --color-bg: #bebebe;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000000;
+} */
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+body {
+    --color-bg: #bebebe;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000000;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+body.dark-mode {
+    --color-bg: #212E37;
+    --color-bg-secondary: #2B3743;
+    --color-text: #ffffff;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+/* Espaciados */
+.my-2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-bg-secondary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-dark-mode {
+    background-color: var(--color-bg-secondary);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+    color: var(--color-text);
+}
+
+.btn-dark-mode:hover {
+    opacity: 0.6;
+}
+
+/* Filtros */
+.filter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Main */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.35rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card img {
+    border-top-left-radius: 0.35rem;
+    border-top-right-radius: 0.35rem;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1000px){
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px){
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px){
+    .navbar-content {
+        font-size: 0.6rem;
+    }
+
+    .filter-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
