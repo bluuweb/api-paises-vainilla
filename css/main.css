@@ -1,8 +1,10 @@
-/* :root {
-    --color-bg: #bebebe;
+:root {
+    /* --color-bg: #bebebe;
     --color-bg-secondary: #ffffff;
-    --color-text: #000000;
-} */
+    --color-text: #000000; */
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --border-radius: 0.35rem;
+}
 
 html {
     box-sizing: border-box;
@@ -46,7 +48,7 @@ body.dark-mode {
 /* Navbar */
 .navbar {
     background-color: var(--color-bg-secondary);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--box-shadow);
 }
 
 .navbar-content {
@@ -76,6 +78,25 @@ body.dark-mode {
     align-items: center;
 }
 
+.form-search {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-secondary);
+    padding: 1rem;
+}
+
+.form-search i {
+    opacity: 0.5;
+}
+
+.form-search input {
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
 /* Main */
 .grid {
     display: grid;
@@ -84,14 +105,15 @@ body.dark-mode {
 }
 
 .card {
+    overflow: hidden;
     background-color: var(--color-bg-secondary);
-    border-radius: 0.35rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .card img {
-    border-top-left-radius: 0.35rem;
-    border-top-right-radius: 0.35rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
 
 .card-content {
@@ -122,6 +144,15 @@ body.dark-mode {
     .filter-content {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .form-search {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .form-search input{
+        width: 85%;
     }
     
     .grid {
